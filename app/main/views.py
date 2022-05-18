@@ -52,6 +52,37 @@ def login():
 def failure():
     
     return render_template('failure.html')
+
+@main.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def dashboard():
+    expense = Expense.query.all()
+    
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment = Comment(owner_id=current_user.id, content=form.content.data)
+        form.content.data = ''
+       
+        
+        db.session.add(comment)
+        db.session.commit()
+    return render_template('dashboard.html', name=current_user.username, expense=expense, form=form, content=form.content.data)
+
+@main.route('/expense', methods=['GET', 'POST'])
+@login_required
+def expense():
+    form = ExpenseForm()
+    
+    if form.validate_on_submit():
+        pitch = Pitch(owner_id=current_user.id, title=form.title.data, category=form.category.data, description=form.description.data)
+        form.title.data = ''
+        form.category.data = ''
+        form.description.data = ''
+        
+        db.session.add(pitch)
+        db.session.commit()
+    return render_template('pitch.html', form=form)
+
     
 # from . import auth
 # from .. import db
