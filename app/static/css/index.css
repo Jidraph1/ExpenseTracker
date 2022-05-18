@@ -1,5 +1,37 @@
+
+
+
+
 .signup-section {
     padding: 8%;
-    background: linear-gradient(90deg, white 50%, #152D35 50%);
+    /* background: linear-gradient(90deg, white 50%, #152D35 50%); */
     height: 100vh;
+}
+.intro{
+    background-color: rgb(66, 66, 131);
+}
+
+.login-pic{
+    display: none;
+}
+
+#loginpic{
+    display:none;
+}
+
+.nav {
+    margin: 3% auto;
+    background-color: #2f7385;
+    color: #fff;
+    height: 15vh;
+    padding: auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.failure {
+    background-color: #C85C5C;
 }

@@ -1,40 +1,24 @@
-{% extends 'base.html' %} 
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link
+    href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@200&family=Quicksand&family=Roboto&family=Roboto+Slab:wght@300;400&family=Zen+Antique&display=swap"
+    rel="stylesheet">
+{% endblock %}
+{% block content%}
+
+<div class="container-fluid intro mt-3">
+    <div class="jumbotron text-center mt-3">
+        <p class='wrd'>Welcome to</p>
+        <h1 class="display-4 intro">EXPENSE TRACKER 💰 </h1>
+        <p class='wrd'>Make your money count</p>
+
+        <a href="{{ url_for('main.signup') }}"><button class="btn btn-light">Sign-up</button></a>
+        <a href="{{ url_for('main.login') }}"><button type="button" class="btn btn-dark">Login</button></a>
+    </div>
+</div>
 
 
-{% block content %}
-   <div>
-       <style>
-           .real{
-               background-image: url('../static/images/coins.jpg');
-               height: 500px;
-               align-items: center;
-           }
-       </style>
-       
-        <div class="navbar navbar-inverse " role="navigation" style="background-color:#1A4182; color: white;">
-
-        <div class="navbar-collapse " style="background-color:#1A4182; color: white;" id=" navbar ">
-            <ul class="nav navbar-nav navbar-right" style="background-color:#1A4182; color: white;">
-                <li>
-                    <a style=" color:white; " class="nav-link " href="#"> About us</a>
-                </li>
-                
-                <li class="nav-item ">
-                    <a style=" color:white; " class="nav-link " href="#">Contact Us</a>
-                </li>
-                
-                
-                <li><a style=" color:white; " href="#">Login</a></li>
-                <li><a style=" color:white; " href="{{ url_for('main.signup') }}">SignUp</a></li>
-            </ul> 
-        </div>
-        </div>
-        <div class="real" style="text-align: center;">
-            <h3><em>EXPENSE TRACKER</em></h3>
-            <h1>"Beware of little expenses,<br> a little leak will sink a great ship"</h1>
-        </div>
-        
-         
-   </div>
 {% endblock %}
 
