@@ -21,3 +21,6 @@ class User(db.Model):
 #     amount = db.Column(bd.Integer)
 #     users = db.relationship('User', backref = 'expenses', lazy='dynamic')
 #     description = db.Column(db.String)
+
+    # def __repr__(self):
+    #         return f'Pitch {self.description}' 
