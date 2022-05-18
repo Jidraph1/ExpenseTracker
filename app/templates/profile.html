@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse " role="navigation" style="background-color:#6c584c; color: white;">
+
+    <div class="navbar-collapse " style="background-color:#1A4182; color: white;" id=" navbar ">
+        <ul class="nav navbar-nav navbar-right" style="background-color:#1A4182; color: white;">
+            <li>
+                <a style=" color:white; " class="nav-link " href="#"> menu</a>
+            </li>
+            
+            <li class="nav-item ">
+                <a style=" color:white; " class="nav-link " href="#">Home</a>
+            </li>
+            
+            
+        
+        </ul> 
+    </div>
+
+    
+</body>
+<div>
+    <style>
+        .real{
+            background-image: url('../static/images/money.jpg');
+            height: 500px;
+            align-items: center;
+        }
+    </style>
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h2 class="display-4"> Good Day! here are your expenses for the month of may</h2> 
+          <a href="#"><button class="btn btn-primary">back</button></a>
+          <a href="#"><button class="btn btn-primary">Add new expense</button></a>
+
+        </div>
+      </div>
+
+
+</html>
