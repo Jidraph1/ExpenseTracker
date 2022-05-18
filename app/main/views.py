@@ -74,15 +74,29 @@ def expense():
     form = ExpenseForm()
     
     if form.validate_on_submit():
-        pitch = Pitch(owner_id=current_user.id, title=form.title.data, category=form.category.data, description=form.description.data)
-        form.title.data = ''
-        form.category.data = ''
+        expense = Expense(owner_id=current_user.id, name=form.name.data, merchant=form.merchant.data, amount=form.amount.data, description=form.description.data)
+        form.name.data = ''
+        form.merchant.data = ''
+        form.amount.data = ''
         form.description.data = ''
         
-        db.session.add(pitch)
+        db.session.add(expense)
         db.session.commit()
-    return render_template('pitch.html', form=form)
+    return render_template('expense.html', form=form)
 
+@main.route('/profile')
+@login_required
+def profile():
+    
+    expense = Expense.query.filter_by(id=current_user.id).all()
+    
+    return render_template('profile.html', name=current_user.username, email=current_user.email, password=current_user.password, expense=expense)
+
+@main.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
     
 # from . import auth
 # from .. import db
