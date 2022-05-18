@@ -12,6 +12,9 @@ Sign Up
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
 crossorigin="anonymous">
 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+<div class='container-fluid signup-section'>
 <div class="row">
     <div class="col-md-6">
       <img class="login-pic"
@@ -47,4 +50,21 @@ crossorigin="anonymous">
          </div>
     
     </div>
+  </div>
+
+
+ #####
+    <div class="container signup text-center">
+      <form class="form-signin" method="POST" action="/signup">
+        <h2 class="form-signin-heading">Sign Up</h2>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username) }}
+        {{ wtf.form_field(form.email) }}
+        {{ wtf.form_field(form.password) }}
+    
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign Up</button>
+
+        <p>Already have an account?<a href="#" style="text-decoration: none;"> Login</a></p>
+      </form>
+    </div> 
 {% endblock%}

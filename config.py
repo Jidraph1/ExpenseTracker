@@ -9,7 +9,7 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
 
-    # SECRET_KEY = 'jibberishjibberish'
+    SECRET_KEY = 'jibberishjibberish'
     DEBUG = True
 
 config_options = {
