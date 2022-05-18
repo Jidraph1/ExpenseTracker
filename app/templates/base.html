@@ -18,6 +18,11 @@ crossorigin="anonymous">
 </head>
 
 <body>
+
+    {% block navbar %} 
+    {% include 'navbar.html' %} 
+    {% endblock %}
+
     {% block content %}
 
     {% endblock %}
@@ -35,3 +40,11 @@ crossorigin="anonymous">
     </script>
 </body>
 </html>
+<!-- =======
+{% extends 'bootstrap/base.html'%}{% block style%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet">{% endblock %}
+<!-- Navbar block  -->
+{% block navbar %} {% include 'navbar.html' %} {% endblock %}
+>>>>>>> f7410381f4ba71a5bc5c104b8e6a1e0f4c4625fe -->
