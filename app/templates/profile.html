@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profile page</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
 
 </head>
 <body>
@@ -13,13 +14,13 @@
 
     <div class="navbar-collapse " style="background-color:#1A4182; color: white;" id=" navbar ">
         <ul class="nav navbar-nav navbar-right" style="background-color:#1A4182; color: white;">
-            <p>
-                <a style=" color:white; " class="nav-link " href="#"> About us</a>
-            </p>
+            <li>
+                <a style=" color:white; " class="nav-link " href="#"> menu</a>
+            </li>
             
-            <p class="nav-item ">
-                <a style=" color:white; " class="nav-link " href="#">Contact Us</a>
-            </p>
+            <li class="nav-item ">
+                <a style=" color:white; " class="nav-link " href="#">Home</a>
+            </li>
             
             
         
@@ -28,12 +29,22 @@
 
     
 </body>
-<div class="row">
-    <div class="col-md-32">
-      <img class="profile-pic"
-                src="{{ url_for('profile', filename='images/money.jpg')}}"
-                alt="">
-    </div>
+<div>
+    <style>
+        .real{
+            background-image: url('../static/images/money.jpg');
+            height: 500px;
+            align-items: center;
+        }
+    </style>
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h2 class="display-4"> Good Day! here are your expenses for the month of may</h2> 
+          <a href="#"><button class="btn btn-primary">back</button></a>
+          <a href="#"><button class="btn btn-primary">Add new expense</button></a>
+
+        </div>
+      </div>
 
 
 </html>
