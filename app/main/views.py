@@ -1,4 +1,8 @@
 from flask import render_template, request, redirect, url_for
+from flask_wtf import FlaskForm
+from .form import LoginForm, RegisterForm
+from ..models import Users
+from werkzeug.se
 from . import main
 
 #Views 
@@ -7,7 +11,7 @@ def index():
     """ View root page that returns the index page and its data
     """
     title = "Welcome to home page"
-    return render_template('signup.html', title = title)
+    return render_template('index.html', title = title)
 
     
 # from . import auth
