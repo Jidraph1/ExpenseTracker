@@ -1,9 +1,9 @@
 from wtforms import StringField, PasswordField, BooleanField
-from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm, form
 from wtforms.validators import InputRequired, Email
 from wtforms.widgets import TextArea
 from wtforms import ValidationError
-from ..models import User
+from ..models import User 
 
 # login registration form
 class LoginForm(FlaskForm):
@@ -31,7 +31,7 @@ class ExpenseForm(FlaskForm):
     
     name = StringField('Name',validators=[InputRequired()])
     merchant = StringField('Name of the entity',validators=[InputRequired()])
-    Amount = StringField('Amount in Ksh',validators=[InputRequired()])
+    amount = StringField('Amount in Ksh',validators=[InputRequired()])
     description = StringField('Brief Description',validators=[InputRequired()], widget=TextArea())
     
 class CommentForm(FlaskForm):

@@ -27,7 +27,7 @@ class ExpenseModelTest(unittest.TestCase):
             '''
             Set up method that will run before every Test
             '''
-            self.new_expense = Expense(1, 1,' pitch', 'pitch','1', 'expense')
+            self.new_expense = Expense(1, 1,' expense', 'expense','1', 'expense')
 
         def test_instance(self):
             '''
@@ -64,7 +64,7 @@ class CommentModelTest(unittest.TestCase):
         def test_to_check_instance_variables(self):
             '''
             '''
-            self.assertEquals(self.new_pitch.id, 1)
+            self.assertEquals(self.new_expense.id, 1)
             self.assertEquals(self.new_comment.owner_id, 1)
             self.assertEquals(self.new_comment.content, 'comment')
             

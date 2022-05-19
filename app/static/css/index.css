@@ -1,15 +1,18 @@
-
-
-
+.intro {
+    background-image: url(app/static/images/coins.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: auto;
+    text-decoration: white;
+}
 
 .signup-section {
     padding: 8%;
     /* background: linear-gradient(90deg, white 50%, #152D35 50%); */
     height: 100vh;
 }
-.intro{
-    background-color: rgb(66, 66, 131);
-}
+
 
 .login-pic{
     display: none;

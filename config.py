@@ -8,7 +8,7 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost/expense'
     SECRET_KEY = 'jibberishjibberish'
     DEBUG = True
 

@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from flask_wtf import FlaskForm
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm, ExpenseForm, CommentForm
 from ..models import User, Expense, Comment
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
@@ -41,7 +41,7 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user)
-                return redirect(url_for('main.success'))
+                return redirect(url_for('main.dashboard'))
          
         return redirect('failure')
     
@@ -68,6 +68,18 @@ def dashboard():
         db.session.commit()
     return render_template('dashboard.html', name=current_user.username, expense=expense, form=form, content=form.content.data)
 
+
+@main.route('/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+
+    form = ExpenseForm()
+    
+    expense = Expense.query.all()
+    
+    return render_template('profile.html', name=current_user.username, email=current_user.email, password=current_user.password, expense=expense, form=form,
+    merchant=form.merchant.data, amount=form.amount.data, description=form.description.data)
+
 @main.route('/expense', methods=['GET', 'POST'])
 @login_required
 def expense():
@@ -84,20 +96,13 @@ def expense():
         db.session.commit()
     return render_template('expense.html', form=form)
 
-@main.route('/profile')
-@login_required
-def profile():
-    
-    expense = Expense.query.filter_by(id=current_user.id).all()
-    
-    return render_template('profile.html', name=current_user.username, email=current_user.email, password=current_user.password, expense=expense)
 
 @main.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
-    
+
 # from . import auth
 # from .. import db
 # from flask import render_template, request, flash, redirect, url_for

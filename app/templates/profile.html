@@ -42,10 +42,13 @@
             <h3>EXPENSES SUBMITTED</h3>
             <div>
                 {% for p in expense %}
-                <p>Name: {{p.name}} </p>
+                <!-- <p>Name: {{p.name}} </p> -->
                 <p>Merchant: {{p.merchant}}</p>
-                <p>Amount spent: {{p.amount}}</p>
-                <p>Content of the pitch: {{p.description}}</p>
+                <p>Amount: {{p.amount}}</p>
+                <p>Description: {{p.description}}</p>
+                <em>
+                <p>Submitted by: {{p.owner.username}}</p>
+            </em>
                 <hr>
                 {% endfor %}
             </div>
