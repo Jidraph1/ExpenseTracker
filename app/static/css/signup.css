@@ -1,0 +1,10 @@
+.signup{
+    background-image: url('https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+
+.login-pic{
+    height: 50vh;
+    width: 50vh;
+    border-radius: 50%;
+
+}
