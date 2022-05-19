@@ -1,0 +1,78 @@
+/* .intro{
+    font-family: 'roboto';
+}
+
+
+    /* Styling what we do */
+.what-we-do {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+.what-we-do .title{
+    background-color: #B5D9FF;
+    width: 100vh;
+    padding: 12%;
+    border-radius: 3%;
+    text-align: center;
+}
+.title h2{
+    font-family: "Antonio", sans-serif;
+    font-size: 33px;
+}
+.what-we-do .paragraph{
+    padding : 5%;
+}
+/* Styling our goal */
+.our-goal{
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+.our-goal .title1{
+    width: 150vh;
+    padding: 12%;
+    text-align: center;
+    background-color: #B5D9FF;
+    border-radius: 3%;
+}
+.title1 h2{
+    font-family: "Antonio", sans-serif;
+    font-size: 33px;
+}
+.our-goal .paragraph1{
+    padding: 3%;
+}
+p{
+    font-family: "poppins", sans-serif;
+    text-align: justify;
+}
+.team h2{
+    text-align: center;
+    font-family: "Antonio", sans-serif;
+    padding-bottom: 1%;
+}
+.team {
+    padding: 2%;
+}
+.team:after {
+    content:"";
+    display:block;
+    width: 8em;
+    max-width:70%;
+    border-bottom: 0.3em solid #B5D9FF;
+    margin: 0.4em auto 0;
+}
+.col-3 {
+    padding: 4%;
+}
+.col-3 img {
+height: 40vh;
+border-radius: 2%;
+}
+.col-3 p {
+    text-align:center;
+}
+.wrd{
+    size: 30px;
+} 

@@ -1,10 +1,14 @@
-.signup{
-    background-image: url('https://images.pexels.com/photos/4386476/pexels-photo-4386476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+.signup {
+    border: 3px solid #2f7385;
+    width: 30%;
+    margin: 5% auto 0;
+    padding: 3%;
 }
-
-.login-pic{
-    height: 50vh;
-    width: 50vh;
-    border-radius: 50%;
-
+.card{
+    height: 10%;
+    width: 100%;
+}
+form {
+    border: 1px solid blue;
+    background-color: aliceblue;
 }
