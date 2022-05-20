@@ -3,84 +3,80 @@
 
 {% block styles %}
 {{super()}}
+
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 <link
     href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@200&family=Quicksand&family=Roboto&family=Roboto+Slab:wght@300;400&family=Zen+Antique&display=swap"
     rel="stylesheet">
+    
 {% endblock %}
 
 
 {% block content %}
-<div class="container-fluid nav text-center">
+<div class="container-fluid nav text-center" style="background-color: rgb(146, 167, 227);">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
             <h3>EXPENSE TRACKER</h3>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <a class="nav-link" href="{{ url_for('main.profile')}}">
-                <h3>PROFILE</h3>
+                <h3>Profile</h3>
             </a>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <a class="nav-link" href="{{url_for('main.logout')}}">
-                <h3>LOGOUT</h3>
+                <h3>Logout</h3>
             </a>
         </div>
     </div>
 
 </div>
-
-<div class="container text-center">
+<div class="container" style="background-color: rgb(255, 228, 232);">
+<div class="container text-center" >
     <h1 class="welcome">Welcome, {{ name | capitalize }}</h1>
-    <p>Expenses need to be accounted for, and Expense Tracker is here for all that and more</p>
+    <em>
+    <p>Expenses need to be accounted for, and Expense Tracker is here for all that and more:</p>
+
+</em>
 </div>
 
+<div class="container p-5">
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
 <div class="container text-center">
-<div class="card" style="width: 18rem;">
+<div class="card exp" style="width: 18rem;">
     <div class="card-body text-center ">
-        <h4 class="card-title">Your expenses go here <br></h4>
+        <h4 class="card-title" style="text-decoration: underline;">Your expenses go here <br></h4>
         <p class="card-text">Lets have a look of what youve been spending on</p>
-        <a href="{{ url_for('main.expense') }}" class="btn btn-primary">Submit Your Expenses</a>
+        <a href="{{ url_for('main.expense') }}" class="btn btn-primary mb-5">Submit Your Expenses</a>
+        <br>
+        <img src="{{ url_for('static', filename='/images/confused-removebg-preview.png')}}" class="img-fluid" alt="team" >
     </div>
 </div>
 </div>
-
-
-
-<!-- <div class="text-center">
-    <h3>BELOW ARE VARIOUS SUBMITTED EXPENSES</h3>
-    <h2>Compare your spending and others </h2>
-    <h5>Explore more:</h5>
-
 </div>
-<div class="container expenses-section">
-    <div class="row"> -->
-        <!-- <div class="col-lg-6 col-md-6 col-sm-6">
+<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="card">
+        <p>As you spend less and earn more, you'll begin to earn a profit and save more money. Maybe at first you'll have a few dollars per month in surplus. Eventually, however, you'll find that you're saving 10%, 20%, or even 50% of your everything you earn.
 
-            {% for p in expense %}
-            <p>Name: {{p.name}} </p>
-            <p>Merchant: {{p.merchant}}</p>
-            <p>Amount: {{p.amount}}</p>
-            <p>Description: {{p.description}}</p>
+            The average person spends his surplus on whatever wants come to mind. Instead of using the money to get ahead, he stays in the same place. Or, worse, he falls behind by taking on debt. A smart money manager puts her profit to use by investing for the future.
+            
+            At first, you'll pursue short-term goals.
+            
+            If you're in debt, get out of debt. Destroying high-interest debt offers the best possible return for your money.
+            Build a cash reserve. It's smart to have money in a savings account to cover short-term emergencies.
+            Invest in yourself. Remember: the more you learn, the more you earn. Increase your skills and education. Update your wardrobe and improve your health. Become a better you.
+            Pursue your personal mission: fund college funds for the kids, pay off the mortgage, start a business, spend a year in southeast Asia. Use money as a tool to improve your life.
+            After your near-term wants and needs are satisfied, it's time to look farther into the future, toward retirement and Financial Independence. You know what that means, right? It's time to invest in the stock market!
+            
+            Investing doesn’t have to be difficult. If you keep things simple, you can invest yourself and receive reasonable returns — all with a minimum of work and worry.</p>
+
+  </div>
+</div>
+</div>
+</div>
 
 
-            <form class="form-signin" method="POST" action="/dashboard">
-                {{ form.hidden_tag() }}
-                {{ wtf.form_field(form.content) }}
-                <button class="btn btn-lg btn-primary btn-block comment-btn" type="submit">Comment</button>
-            </form>
-            <hr>
-            {% endfor %}
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            {% for comment in comments %}
-            <p> {{comment.content}}</p>
 
-            {% endfor %}
-        </div> -->
 
-<!-- 
-    </div>
-
-</div> -->
 {% endblock %}
