@@ -4,8 +4,8 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace(".//", "ql://", 1)
-
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace(".//", "ql://", 1)
+    pass
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jidraph:6720@localhost/expense'
