@@ -1,5 +1,8 @@
 alembic==1.7.7
 apturl==0.5.2
+argcomplete==2.0.0
+asgiref==3.5.2
+backports.zoneinfo==0.2.1
 bcrypt==3.1.7
 blinker==1.4
 Brlapi==0.7.0
@@ -14,6 +17,8 @@ dbus-python==1.2.16
 defer==1.0.6
 distro==1.4.0
 distro-info===0.23ubuntu1
+Django==4.0.4
+django-cors-headers==3.12.0
 dnspython==2.2.1
 dominate==2.6.0
 duplicity==0.8.12.0
@@ -77,6 +82,7 @@ SecretStorage==2.3.1
 simplejson==3.16.0
 six==1.14.0
 SQLAlchemy==1.4.36
+sqlparse==0.4.2
 systemd-python==234
 ubuntu-advantage-tools==27.7
 ubuntu-drivers-common==0.0.0
